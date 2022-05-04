@@ -5,6 +5,7 @@ export default class Components {
   constructor($target) {
     this.$target = $target;
     this.setup();
+    this.setEvent();
     this.render();
   }
   //state setup
@@ -16,8 +17,8 @@ export default class Components {
     return "";
   }
   //add event
-  sendEvent() {
-    console.log("sendEvent");
+  setEvent() {
+    console.log("setEvent");
   }
   //set State
   setState(newState) {
@@ -27,6 +28,5 @@ export default class Components {
   //render
   render() {
     this.$target.innerHTML = this.template();
-    this.sendEvent();
   }
 }
