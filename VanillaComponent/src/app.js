@@ -1,4 +1,4 @@
-import Items from "./components/Items";
+import Items from "./components/Items.js";
 
 class App {
   constructor() {
@@ -6,3 +6,4 @@ class App {
     new Items($app);
   }
 }
+new App();

@@ -1,4 +1,4 @@
-import Components from "../core/Component";
+import Components from "../core/Component.js";
 
 export default class Items extends Components {
   setup() {
@@ -10,12 +10,12 @@ export default class Items extends Components {
     const { items } = this.$state;
     return `
       <ul>
-        ${items.map((item) => `<li>${item}</li>`.join(""))}
+        ${items.map((item) => `<li>${item}</li>`).join("")}
       </ul>
       <button>추가</button>
     `;
   }
-  setEvent() {
+  sendEvent() {
     this.$target.querySelector("button").addEventListener("click", () => {
       const { items } = this.$state; // ["item1", "item2"]
       this.setState({ items: [...items, `item${items.length + 1}`] });

@@ -4,6 +4,8 @@ export default class Components {
   $state;
   constructor($target) {
     this.$target = $target;
+    this.setup();
+    this.render();
   }
   //state setup
   setup() {
