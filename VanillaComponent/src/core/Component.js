@@ -29,4 +29,17 @@ export default class Components {
   render() {
     this.$target.innerHTML = this.template();
   }
+  //'click', '.addBtn', callback func
+  addEvent(eventType, selector, callback) {
+    const children = [...this.$target.querySelectorAll(selector)];
+    //$target에서 selector에 해당하는 query 모두 선택하고 chiledren 배열에 넣는다.
+    const isTarget = (target) => {
+      return children.includes(target) || target.closest(selector);
+    };
+    //target이 children에 없으면 target에서 가장 가까운 closest를 찾는다
+    this.$target.addEventListener(eventType, (event) => {
+      if (!isTarget(event.target)) return false;
+      callback(event);
+    });
+  }
 }

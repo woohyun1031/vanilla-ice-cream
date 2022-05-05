@@ -6,4 +6,5 @@ class App {
     new Items($app);
   }
 }
+
 new App();
