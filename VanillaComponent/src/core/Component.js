@@ -2,8 +2,10 @@ export default class Components {
   //target, state 2개의 property
   $target; //target elements
   $state;
-  constructor($target) {
+  $props;
+  constructor($target, $props) {
     this.$target = $target;
+    this.$props = $props; // $props 할당
     this.setup();
     this.setEvent();
     this.render();
@@ -11,6 +13,10 @@ export default class Components {
   //state setup
   setup() {
     console.log("setup");
+  }
+  //mounted => render 이후 추가 기능 수행
+  mounted() {
+    console.log("mounted");
   }
   //html template
   template() {
@@ -28,6 +34,7 @@ export default class Components {
   //render
   render() {
     this.$target.innerHTML = this.template();
+    this.mounted();
   }
   //'click', '.addBtn', callback func
   addEvent(eventType, selector, callback) {
