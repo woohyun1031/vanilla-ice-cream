@@ -21,4 +21,7 @@ ball.onmousedown = function (event) {
     document.removeEventListener("mousemove", onMouseMove);
     ball.onmouseup = null;
   };
+  ball.ondragstart = function () {
+    return false;
+  };
 };
