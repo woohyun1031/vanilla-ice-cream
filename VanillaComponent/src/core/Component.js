@@ -31,11 +31,6 @@ export default class Components {
     this.$state = { ...this.$state, ...newState };
     this.render();
   }
-  //render
-  render() {
-    this.$target.innerHTML = this.template();
-    this.mounted();
-  }
   //'click', '.addBtn', callback func
   addEvent(eventType, selector, callback) {
     const children = [...this.$target.querySelectorAll(selector)];
@@ -48,5 +43,10 @@ export default class Components {
       if (!isTarget(event.target)) return false;
       callback(event);
     });
+  }
+  //render
+  render() {
+    this.$target.innerHTML = this.template();
+    this.mounted();
   }
 }
