@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Components</title>
+    <link rel="stylesheet" href="./src/style.css">
   </head>
   <body>
     <p>Drag the ball.</p>
@@ -15,7 +16,21 @@
       height="40"
       id="ball"
     />
-    <img src="https://en.js.cx/clipart/soccer-gate.svg" id="gate" class="droppable" style="cursor: pointer" margin-bottom="100px" width="83px" height="46px"/>
+    <img 
+      src="https://en.js.cx/clipart/soccer-gate.svg" 
+      id="gate"
+      class="droppable" 
+      style="cursor: pointer" 
+      margin-bottom="100px" 
+      width="83px" 
+      height="46px"
+    />
+
+    <div id="slider" class="slider">
+      <div class="thumb"></div>
+    </div>
+
     <script src="./src/main.js"></script>
+    <script src="./src/slider.js"></script>
   </body>
 </html>
