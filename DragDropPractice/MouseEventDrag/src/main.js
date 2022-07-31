@@ -5,12 +5,14 @@ isball.ondragstart = function () {
 }
 
 isball.addEventListener("mousedown", (event) => {
+  //getBoundingClientRect => isball element의 위치를 알아내기위한
+  let shiftX = event.clientX - isball.getBoundingClientRect().left
+  let shiftY = event.clientY - isball.getBoundingClientRect().top
+
   // 공을 pageX, pageY 좌표 중앙에 위치하게 합니다.
   const moveAt = (pageX, pageY) => {
-    isball.style.left = pageX - isball.offsetWidth / 2 + "px"
-    console.log(pageX - isball.offsetWidth / 2 + "px")
-    isball.style.top = pageY - isball.offsetHeight / 2 + "px"
-    console.log(pageY - isball.offsetHeight / 2 + "px")
+    isball.style.left = pageX - shiftX + "px"
+    isball.style.top = pageY - shiftY + "px"
   }
   const mouseMove = (event) => {
     moveAt(event.pageX, event.pageY)
